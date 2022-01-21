@@ -10,8 +10,8 @@ terraform {
 
 #Provider :
 provider "aws" {
-  access_key = ""
-  secret_key = ""
+  access_key = "" # ADD AWS_ACCESS_KEY
+  secret_key = "" # ADD AWS_SECRET_KEY
   region     = "ap-south-1"
 }
 
@@ -26,8 +26,8 @@ resource "aws_instance" "phantoms-dev-instance" {
   ami                         = "ami-08ee6644906ff4d6c" #ubuntu 18.04LTS
   availability_zone           = "ap-south-1b"
   instance_type               = "t2.micro" #FREE TIER
-  subnet_id                   = "subnet-"  #PRIVATE SUBNET
-  vpc_security_group_ids      = [""]
+  subnet_id                   = "subnet-"#ADD SUBNET_ID  #PRIVATE SUBNET
+  vpc_security_group_ids      = [""] # ADD SECURITY_GROUP_ID 
   associate_public_ip_address = true                                 #ASSIGNS PUBLIC IP TO INSTANCE 
   user_data                   = data.template_file.userdata.rendered #RUNS OUR SCRIPT
   tags = {
