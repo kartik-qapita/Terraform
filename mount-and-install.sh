@@ -113,7 +113,7 @@ sudo systemctl enable mongod
 
 # Installing DotNet-6.0
 wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb rm packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update; \
   sudo apt-get install -y apt-transport-https && \
   sudo apt-get update && \
@@ -172,9 +172,14 @@ deb https://nginx.org/packages/ubuntu/ $(lsb_release -cs) nginx
 deb-src https://nginx.org/packages/ubuntu/ $(lsb_release -cs) nginx
 EOF
 ) | sudo tee /etc/apt/sources.list.d/nginx.list
+echo
 sudo apt-get update
-# If key error, copy the key to environment variable "key" and run the below command
+echo
+key=ABF5BD827BD9BF62
+echo
+# If key error, copy the key to environment variable "key" and run the below command ABF5BD827BD9BF62
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
+sudo apt-get update
 sudo apt-get remove -y nginx
 sudo apt install -y nginx
 echo 'Software Installation Completed'
