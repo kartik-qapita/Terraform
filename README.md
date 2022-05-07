@@ -16,8 +16,5 @@ https://registry.terraform.io/providers/hashicorp/aws/latest
 
 #### yes, even hidden code blocks!
 
-https://user-images.githubusercontent.com/97021175/159161411-823854ab-e8b4-4585-bb32-11de3b9cebb6.mp4
-
-
 </p>
 </details>
